@@ -1,0 +1,203 @@
+html {
+  background-color: rgba(0, 0, 0, 0.900);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
+
+#root {
+  height: 100vh;
+  max-width: 1000px;
+  margin: auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.336);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.829), rgba(0, 0, 0, 0.829)), url("./assets/images/movie-bg.jpg");
+  background-size: cover;
+  background-position: 50% 20%;
+  height: 25%;
+}
+
+.header-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3.3em;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+.search {
+  display: flex;
+  background-color: transparent;
+  height: 40px;
+  position: absolute;
+  margin-top: -20px; /* Adjust this value to position the search bar */
+  z-index: 10; /* Ensure the search bar is above other elements */
+  left: 50%; /* Centering horizontally */
+  transform: translateX(-50%); /* Centering horizontally */
+  max-width: 900px;
+  width: 90%;
+}
+
+.search > input,
+.search > button {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.search > input {
+  flex-grow: 1;
+  border: none;
+  background-color: #2E2E2F;
+  border-radius: 6px 0px 0px 06px;
+  font-size: 1rem;
+  color: #A5A5A5;
+  padding-left: 35px;
+  background-image: url("./assets/images/search-icon.png");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  font-weight: 500;
+}
+
+.search > input:focus {
+  outline: none;
+}
+
+.search > button {
+  width: 120px;
+  border: none;
+  background-color: #4B4B4B;
+  color: inherit;
+  font-weight: 700;
+  border-radius: 0px 6px 6px 0px;
+  font-size: 14px;
+}
+
+.search > button:hover{
+  background-color: #666666;
+}
+
+.movies, .watchlist {
+  min-height: 75%;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4em 0;
+  box-sizing: border-box;
+  gap: 2em;
+}
+
+.movie {
+  display: flex;
+  gap: 1em;
+  width: 85%;
+  border-bottom: #2C2C2C solid 1.5px;
+  padding-bottom: 1.5em;
+}
+
+.movie:last-of-type {
+  border-bottom: none;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.watchlist-btn {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.watchlist-btn:hover {
+  text-decoration: underline;
+}
+
+h3 { 
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.poster > img {
+  width: 100px;
+  height: auto;
+}
+
+.movie-line {
+  display: flex;
+  gap: 1.25em;
+}
+
+.movie-description {
+  color:#A5A5A5;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #2E2E2F;
+  gap: 1.5em;
+  height: 75%;
+  background-color: #121212;
+}
+
+.placeholder > p {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a > h4 {
+  margin: 0;
+}
+
+.star-icon {
+  padding-right: 0.25em
+}
+
+.movie-details-span {
+  display: flex;
+  gap: 0.75em;
+}
+
