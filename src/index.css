@@ -168,7 +168,21 @@ p {
 
 .poster > img {
   width: 100px;
-  height: auto;
+  height: 153px;
+}
+
+.poster-placeholder {
+  background-color: #2c2c2c7e;
+  height: 153px;
+  width: 100px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholder-icon {
+  width: 
 }
 
 .movie-line {

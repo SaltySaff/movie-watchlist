@@ -5,6 +5,7 @@ import {
   faStar,
   faCircleMinus,
   faCirclePlus,
+  faFilm,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Movie(props) {
@@ -22,14 +23,21 @@ export default function Movie(props) {
   }
 
   useEffect(() => {
-    setIsInWatchlist(movieExists(props.movie.imdbID))
-  }, [props.movie.imdbID, movieExists])
+    setIsInWatchlist(movieExists(props.movie.imdbID));
+  }, [props.movie.imdbID, movieExists]);
 
   return (
     <div className="movie">
-      <div className="poster">
-        <img src={props.poster} alt="movie-poster" />
-      </div>
+      {props.poster !== "N/A" && (
+        <div className="poster">
+          <img src={props.poster} alt="movie-poster" />
+        </div>
+      )}
+      {props.poster === "N/A" && (
+        <div className="poster-placeholder">
+          <FontAwesomeIcon className="placeholder-icon" icon={faFilm} size="2xl" />
+        </div>
+      )}
       <div className="movie-details">
         <div className="movie-line">
           <h3>{props.title}</h3>
