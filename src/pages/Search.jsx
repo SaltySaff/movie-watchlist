@@ -34,10 +34,6 @@ function Search() {
       });
   };
 
-  function handleAddToWatchList(movie) {
-    addToWatchlist(movie)
-  }
-
   function addMovie(newMovie) {
     setCurrentMovies((prevMovies) => [...prevMovies, newMovie]);
   }

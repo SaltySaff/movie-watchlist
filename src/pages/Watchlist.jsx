@@ -5,7 +5,7 @@ import Movie from "../components/Movie";
 
 export default function Watchlist() {
   const [hideWatchlist, setHideWatchlist] = useState(true);
-  const { watchlist, removeFromWatchlist } = useWatchlist();
+  const { watchlist } = useWatchlist();
 
   const watchlistEls = watchlist.map((movie) => {
     return (

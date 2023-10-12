@@ -33,7 +33,7 @@ export default function Movie(props) {
       <div className="movie-details">
         <div className="movie-line">
           <h3>{props.title}</h3>
-          <span>
+          <span className="no-wrap">
             <FontAwesomeIcon
               className="star-icon"
               icon={faStar}
@@ -48,7 +48,7 @@ export default function Movie(props) {
             <span>{props.genre}</span>
             {!isInWatchlist && (
               <button
-                className="watchlist-btn"
+                className="watchlist-btn no-wrap"
                 onClick={() => handleAddToWatchList(props.movie)}
               >
                 <FontAwesomeIcon icon={faCirclePlus} color="green" /> Watchlist
@@ -56,7 +56,7 @@ export default function Movie(props) {
             )}
             {isInWatchlist && (
               <button
-                className="watchlist-btn"
+                className="watchlist-btn no-wrap"
                 onClick={() => handleRemoveFromWatchlist(props.movie.imdbID)}
               >
                 <FontAwesomeIcon icon={faCircleMinus} color="red" /> Remove

@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 const WatchlistContext = createContext();
 
@@ -14,8 +14,8 @@ export const WatchlistProvider = ({ children }) => {
   const [watchlist, setWatchlist] = useState([]);
 
   const movieExists = (movieID) => {
-    return watchlist.some(movie => movie.imdbID === movieID)
-  }
+    return watchlist.some((movie) => movie.imdbID === movieID);
+  };
 
   const addToWatchlist = (movie) => {
     setWatchlist([...watchlist, movie]);
@@ -25,9 +25,31 @@ export const WatchlistProvider = ({ children }) => {
     setWatchlist(watchlist.filter((movie) => movie.imdbID !== movieID));
   };
 
+  useEffect(() => {
+    const storedWatchlist = localStorage.getItem("myWatchlist")
+    if (storedWatchlist) {
+      setWatchlist(JSON.parse(storedWatchlist))
+    } else {
+      localStorage.setItem("myWatchlist", JSON.stringify([]))
+    }
+  }, [])
+
+  useEffect(() => {
+    if (watchlist.length > 0) {
+      localStorage.setItem("myWatchlist", JSON.stringify(watchlist));
+    }
+  }, [watchlist]);
+
   return (
-    <WatchlistContext.Provider value={{watchlist, addToWatchlist, removeFromWatchlist, movieExists}}>
-        {children}
+    <WatchlistContext.Provider
+      value={{
+        watchlist,
+        addToWatchlist,
+        removeFromWatchlist,
+        movieExists,
+      }}
+    >
+      {children}
     </WatchlistContext.Provider>
-  )
+  );
 };

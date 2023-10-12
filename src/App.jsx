@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import Search from "./pages/Search";
 import Watchlist from "./pages/Watchlist";
 
+
 function App() {
   return (
     <WatchlistProvider>
