@@ -168,7 +168,6 @@ p {
 
 .poster > img {
   width: 100px;
-  height: 153px;
 }
 
 .poster-placeholder {
@@ -179,10 +178,6 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.placeholder-icon {
-  width: 
 }
 
 .movie-line {

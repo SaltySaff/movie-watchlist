@@ -1,11 +1,17 @@
-export default function SearchBar({searchValue, setSearchValue, search}) {
+import { useEffect } from "react";
+
+export default function SearchBar({searchValue, setSearchValue, search, setPrevSearchValue, setCurrentMovies}) {
   function handleChange(e) {
     setSearchValue(e.target.value);
   }
 
+  console.log(searchValue)
+
   function handleSearch() {
+    setPrevSearchValue(searchValue)
     setSearchValue('')
-    search()
+    setCurrentMovies([])
+    search(searchValue, 1)
   }
 
   function handleKeyDown(e) {
